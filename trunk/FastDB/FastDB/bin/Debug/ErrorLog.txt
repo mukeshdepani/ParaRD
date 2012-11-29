@@ -1,0 +1,19 @@
+Date and Time of Exception: 11/28/2012 6:51:54 PM
+Source of Exception: MainWindow Constructor
+ 
+Error Message: MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'rmc_demo'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.AuthenticateNew(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at MySQLData.DataAccess.ADODataBridge.getSchemaTree(String connectionString, String schemaStr, String derivedTableFilePath) in D:\Work\github\trunk\MySQLData\MySQLData\DataAccess\ADODataBridge.cs:line 634
+   at FastDB.MainWindow..ctor() in D:\Work\github\trunk\FastDB\FastDB\MainWindow.xaml.cs:line 73
+------------------------------------------- 
+ 

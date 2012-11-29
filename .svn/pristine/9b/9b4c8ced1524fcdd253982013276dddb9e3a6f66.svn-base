@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <!--<add key="FastDBConn" value="server=127.0.0.1;uid=root;pwd=;"/>-->
+    <!--<add key="FastDBConn" value="server=192.168.1.7;uid=gmedatia;pwd=Kuchaman89;"/>-->
+    <!--<add key="FastDBConn" value="Server=localhost;User Id=root;Database=test;port=5029;allow zero datetime=yes;default command timeout=600;"/>
+    <add key="DefaultDBConn" value="Server=localhost;User Id=root;Database=test;port=5029;allow zero datetime=yes;default command timeout=600;"/>
+    <add key="DefaultDatabase" value="rmc_demo"/>
+    <add key="rowPageSize" value="40"/>
+    <add key="columnPageSize" value="10"/>
+    <add key="SqlServerDBConn" value=""/>
+    <add key="isErrorLoggingOn" value="true"/>
+    <add key ="ErrorMessage" value="There was an error during execution, Please check the error log."/>-->
+
+    <add key="FastDBConn" value="Server=localhost;User Id=root;Database=rmc_demo;port=5029;allow zero datetime=yes;default command timeout=600;"/>
+    <add key="DefaultDBConn" value="Server=localhost;User Id=root;Database=rmc_demo;port=5029;allow zero datetime=yes;default command timeout=600;"/>
+    <add key="DefaultDatabase" value="rmc_demo"/>
+    <add key="DerivedTablesPath" value="C:/work/infobright/DerivedTables/"/>
+    <add key="rowPageSize" value="40"/>
+    <add key="columnPageSize" value="10"/>
+    <add key="SqlServerDBConn" value=""/>
+    <add key="isErrorLoggingOn" value="true"/>
+    <add key="ErrorMessage" value="There was an error during execution, Please check the error log."/>
+    <add key="ConfirmationMesssage" value="Update the SQL tab will make QUERY tab out of sync."/>
+  </appSettings>
+  <connectionStrings>
+    <add name="FastDB" connectionString=""/>
+  </connectionStrings>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0,Profile=Client"/></startup></configuration>

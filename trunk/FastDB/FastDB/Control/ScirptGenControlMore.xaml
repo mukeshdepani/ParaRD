@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="FastDB.Control.ScirptGenControlMore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SQLBuilder.Enums;assembly=MySQLData"
+             mc:Ignorable="d" 
+             d:DesignHeight="966" d:DesignWidth="600">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid Width="600" HorizontalAlignment="Left">
+        <StackPanel Orientation="Vertical"  Margin="5,10,0,0" HorizontalAlignment="Left" Width="500">
+            <DockPanel HorizontalAlignment="Left" Width="500">
+                <TextBox Name="txtColumnName" Width="120" Margin="5,0" HorizontalAlignment="Left"></TextBox>
+                <ComboBox Name="cmbDataType" Width="100" Margin="5,0" HorizontalAlignment="Left"  IsEditable="True" SelectionChanged="cmbDataType_SelectionChanged">
+                </ComboBox>
+                <TextBox Name="txtSize" Width="45" Margin="5,0" HorizontalAlignment="Left"></TextBox>
+
+                <CheckBox Name="chkLookUp" Margin="20,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                <CheckBox Name="chkNULL" Margin="20,0,20,0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                <Button  Name="btnDelete" Uid="0" Click="btnDelete_Click" Visibility="Visible" Margin="14,0"  HorizontalAlignment="Left">
+                    <DockPanel>
+                        <Image Source="../Images/delete.jpg" Height="14.5" Width="14.5"/>
+                    </DockPanel>
+                </Button>
+                <!--<Button  Name="btnAdd" Uid="0" Click="btnAdd_Click" Visibility="Visible" Margin="5,0"  HorizontalAlignment="Left">
+                    <DockPanel>
+                        <Image Source="../Images/plusimage.bmp" Height="18" Width="18"/>
+                    </DockPanel>
+                </Button>-->
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

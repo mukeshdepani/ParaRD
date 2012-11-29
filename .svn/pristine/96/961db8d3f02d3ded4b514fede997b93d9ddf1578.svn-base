@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="FastDB.Control.CrossTabulationTabStackPanelGroupByControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:myslqData="clr-namespace:SQLBuilder.Clauses;assembly=MySQLData"
+             mc:Ignorable="d" 
+              d:DesignHeight="40" d:DesignWidth="1000">
+    <Grid>
+        <StackPanel Orientation="Vertical"  Margin="10,0" HorizontalAlignment="Left">
+
+            <DockPanel HorizontalAlignment="Left">
+                <ComboBox Name="cmbCrossTabulationTabGroupByColumnsName" SelectedValuePath="Name" Width="150" Height="20" Margin="5,0,15,10" HorizontalAlignment="Left" IsEditable="True" SelectionChanged="cmbCrossTabulationTabGroupByColumnsName_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock     Text="{Binding Path=Name}" FontWeight="Bold" IsHitTestVisible="True" Height="20"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox Name="cmbCrossTabulationSort" Width="114" Height="20" Margin="0,0,10,10" HorizontalAlignment="Left"/>
+                <TextBox Name="txtCrossTabulationTabGroupByAlias" Height="20" Width="100" BorderBrush="SteelBlue" Margin="5,0,10,10" TextChanged="txtCrossTabulationTabGroupByAlias_TextChanged" />
+                <Button  Name="btnCrossTabGroupByDelete" Height="20" Uid="0" Visibility="Hidden" Margin="5,0,0,10"  HorizontalAlignment="Left">
+                    <DockPanel>
+                        <Image Source="../Images/minusimage.bmp" Height="18" Width="18"/>
+                    </DockPanel>
+                </Button>
+                <TextBox Name="txtCrossTabulationTabGroupByColFormat" Height="20" Width="0" Visibility="Hidden" />
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

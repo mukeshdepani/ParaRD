@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="FastDB.Control.FromTabStackPanelControlMore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SQLBuilder.Enums;assembly=MySQLData"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1000">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Left">
+        <StackPanel Orientation="Vertical"  Margin="5,0" HorizontalAlignment="Left">
+            <DockPanel HorizontalAlignment="Left">
+                <ComboBox Name="cmbFromTabFromANDOR" Width="54" Margin="5,0" HorizontalAlignment="Left"  IsEditable="True">
+                </ComboBox>
+                <ComboBox Name="cmbFromTabFromColumns" Width="150" Margin="5,0" HorizontalAlignment="Left"  IsEditable="True" SelectionChanged="cmbFromTabFromColumns_SelectionChanged">
+                </ComboBox>
+                <ComboBox Name="cmbFromTabQueryOpretor" Width="114" Margin="5,0" HorizontalAlignment="Left" >
+                </ComboBox>
+                <ComboBox Name="cmbFromTabJoinColumns" Width="150" Margin="5,0" HorizontalAlignment="Left" IsEditable="True" SelectionChanged="cmbFromTabFromColumns_SelectionChanged">
+                </ComboBox>
+                <Button  Name="btndeletemore" Uid="0" Click="btnDelete_Click" Visibility="Visible" Margin="5,0"  HorizontalAlignment="Left">
+                    <DockPanel>
+                        <Image Source="../Images/minusimage.bmp" Height="18" Width="18"/>
+                    </DockPanel>
+                </Button>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

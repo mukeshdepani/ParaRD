@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="FastDB.Control.WhereTabNullNotNullConditionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="102" d:DesignWidth="1049">
+    <Grid>
+        <StackPanel Orientation="Vertical"  Margin="10,0" >
+            <DockPanel DockPanel.Dock="Top">
+                <Label Name="lblLogicalOpreator" Content="Logical Opreator" Width="115" Margin="0,0" HorizontalAlignment="Left" Visibility="Hidden"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <ComboBox Name="cmbWhereTabQueryAndOr"  Width="85" Margin="0,0" HorizontalAlignment="Left">
+                   
+                </ComboBox>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Label Content="" Width="100" Margin="59,0"/>
+                <Label Content="Level" Width="35"  HorizontalAlignment="Left" Margin="0,0"/>
+            </DockPanel>
+            <DockPanel>
+                <ComboBox Name="cmbWhereTabNullNotNullColumns" Width="150" Margin="0,0" HorizontalAlignment="Left"  IsEditable="True" SelectionChanged="cmbWhereTabNullNotNullColumns_SelectionChanged" />
+                <Label Name="lblIs" Content="is" Width="10" Margin="7,0" HorizontalAlignment="Left" />
+                <Label Name="lblNullNotNull" Content="" Width="41" Margin="-4,0" HorizontalAlignment="Left" />
+                <ComboBox Name="cmbWhereTabQueryLevel" Width="35" Margin="10,0" HorizontalAlignment="Left" SelectionChanged="cmbWhereTabQueryLevel_SelectionChanged">
+                    <ComboBoxItem Name="Level1">
+                        <TextBlock Text="1" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Level2">
+                        <TextBlock Text="2" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Level3">
+                        <TextBlock Text="3" />
+                    </ComboBoxItem>
+                    <ComboBoxItem Name="Level4">
+                        <TextBlock Text="4" />
+                    </ComboBoxItem>
+                </ComboBox>
+                
+                <Button  Name="btnDelete" Uid="0" Click="btnDelete_Click" HorizontalAlignment="Left" Height="25">
+                    <DockPanel>
+                        <Image Source="../Images/minusimage.bmp" Height="18" Width="18"/>
+                    </DockPanel>
+                </Button>
+            </DockPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

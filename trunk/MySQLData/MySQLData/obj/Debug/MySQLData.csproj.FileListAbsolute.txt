@@ -1,0 +1,8 @@
+D:\Work\github\trunk\MySQLData\MySQLData\bin\Debug\MySQLData.dll
+D:\Work\github\trunk\MySQLData\MySQLData\bin\Debug\MySQLData.pdb
+D:\Work\github\trunk\MySQLData\MySQLData\bin\Debug\MySql.Data.dll
+D:\Work\github\trunk\MySQLData\MySQLData\bin\Debug\MySql.Data.Entity.dll
+D:\Work\github\trunk\MySQLData\MySQLData\bin\Debug\MySql.Web.dll
+D:\Work\github\trunk\MySQLData\MySQLData\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\github\trunk\MySQLData\MySQLData\obj\Debug\MySQLData.dll
+D:\Work\github\trunk\MySQLData\MySQLData\obj\Debug\MySQLData.pdb

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="FastDB.Control.CrossTabulationViewControls.CrossTabulationViewGroupByControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Name="GridViewGroupByControl">
+        <StackPanel Orientation="Vertical">
+            <DockPanel Width="auto">
+                <DockPanel DockPanel.Dock="Top" Background="#CCCCCC" HorizontalAlignment="Stretch" >
+                    <Label Name="lblGroupByColumnHeader"  Style="{DynamicResource CrossTabulationGroupByHeaderColumRowStyle}" Height="54" VerticalContentAlignment="Center"/>
+                </DockPanel>
+                <StackPanel Name="StackPaenlGroupbyColumnRows" DockPanel.Dock="Top">
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

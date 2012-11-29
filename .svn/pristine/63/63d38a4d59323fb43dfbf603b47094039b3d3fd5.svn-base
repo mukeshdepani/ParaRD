@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FastDB.Control.TabulationTabStackPanelSummaryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:myslqData="clr-namespace:SQLBuilder.Clauses;assembly=MySQLData"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="1000">
+    <Grid>
+        <StackPanel Orientation="Vertical"  Margin="10,0" HorizontalAlignment="Left">
+
+            <DockPanel HorizontalAlignment="Left">
+                <Label Width="0"/>
+                <ComboBox Name="cmbTabulationTabSummaryColumnsName"  SelectedValuePath="Name" Width="150" Margin="10,0,15,10" Height="20" HorizontalAlignment="Left" SelectionChanged="cmbTabulationTabSummaryColumnsName_SelectionChanged"  IsEditable="True">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock     Text="{Binding Path=Name}" FontWeight="Bold" IsHitTestVisible="True" Height="20"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox Name="cmbTabulationTypeOfSummary" Width="114" Margin="0,0,10,10" Height="20" HorizontalAlignment="Left" SelectionChanged="cmbTabulationTypeOfSummary_SelectionChanged" />
+                <ComboBox Name="cmbTabulationTabUserSelectSummaryColFormat" Width="100" Height="20" Margin="5,0,10,10" SelectionChanged="cmbTabulationTabUserSelectSummaryColFormat_SelectionChanged" />
+                <TextBox Name="txtTabulationTabSummaryAlias" Width="100" Margin="5,0,10,10" Height="20" BorderBrush="SteelBlue" TextChanged="txtTabulationTabSummaryAlias_TextChanged" />
+                <Button  Name="btnDelete" Uid="0" Visibility="Hidden" Margin="5,0,0,10" Height="20" HorizontalAlignment="Left">
+                    <DockPanel>
+                        <Image Source="../Images/minusimage.bmp" Height="18" Width="18"/>
+                    </DockPanel>
+                </Button>
+                <TextBox Name="txtTabulationTabSummaryColFormat" Width="0" Height="20" Visibility="Hidden" />
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

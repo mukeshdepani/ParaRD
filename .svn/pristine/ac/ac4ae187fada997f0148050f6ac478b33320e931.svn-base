@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="FastDB.Control.TabulationTabControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:myControl="clr-namespace:FastDB.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="1000">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+            <Border Margin="10,10" Padding="5" Background="AliceBlue"  BorderBrush="SteelBlue" BorderThickness="2,2,2,2" CornerRadius="10" VerticalAlignment="Top" Height="Auto" Width="900" HorizontalAlignment="Left">
+                <DockPanel  Width="auto" Height="auto" HorizontalAlignment="Stretch" Margin="0,0">
+                    <Label Name="lblErrorMessage" DockPanel.Dock="Top" Content="" HorizontalAlignment="Left"  Height="20" FontWeight="Bold" Foreground="Red" Background="Black" Visibility="Visible" Margin="0,0,0,0" />
+                    <Button Name="btnRest"  DockPanel.Dock="Top" HorizontalAlignment="Left" Content="Clear" Click="btnRest_Click" Margin="10,0,0,10" Width="75"/>
+                    <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left">
+                        <Label Name="lblGruoupBy" DockPanel.Dock="Top" Content="What values do you want to use to group the records ? (Optional)" HorizontalAlignment="Left"  Height="25"  Margin="10,10"/>
+                        <DockPanel DockPanel.Dock="Top">
+                            <Label Content="Column Name" Width="120" Margin="50,0"/>
+                            <Label Content="Sort" Width="100" Margin="10,0"/>
+                            <Label Content="Alias" Width="100" Margin="0,0"/>
+                        </DockPanel>
+                        <StackPanel  Name="StackPanelTabuLationTabGroupBy" DockPanel.Dock="Top" Width="auto" Height="auto"  CanVerticallyScroll="True" CanHorizontallyScroll="True" HorizontalAlignment="Left">
+                        </StackPanel>
+                    </DockPanel>
+                    <DockPanel HorizontalAlignment="Left">
+                        <Label Name="lblSummary" DockPanel.Dock="Top" Content="Which colums' data would you like to summarize ? (Optional)" HorizontalAlignment="Left"  Height="25" Margin="10,10" />
+                        <DockPanel DockPanel.Dock="Top"  Margin="0,0,0,0">
+                            <Label Content="Column Name" Width="140" Margin="45,20,0,0" Height="20"/>
+                            <DockPanel Margin="5,0">
+                                <Label Content=" Type Of" Width="60" Height="20" DockPanel.Dock="Top" Margin="20,0"/>
+                                <Label Content="Summary" Width="60" Height="20" Margin="0,0"/>
+                            </DockPanel>
+                            <Label Content="Column Format" Width="90" Margin="25,20,0,0" />
+                            <Label Content="Alias" Width="100" Margin="30,20,0,0" Height="20"/>
+                        </DockPanel>
+                        <StackPanel Name="StackPanelTabuLationTabSummary" Margin="0,0,0,25" DockPanel.Dock="Top" Width="auto" Height="auto"  CanVerticallyScroll="True" CanHorizontallyScroll="True" HorizontalAlignment="Left">
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

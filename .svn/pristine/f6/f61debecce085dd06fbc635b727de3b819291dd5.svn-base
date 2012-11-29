@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="FastDB.Control.CrossTabulationViewControls.CrossTabulationViewControl"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:tk="http://schemas.microsoft.com/wpf/2008/toolkit" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="GrandTotalBackgroundBrush" Color="#566047"/>
+        <Style x:Key="CrossTabulationEmptyColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#BBD9EE" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="#BBD9EE" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="CrossTabulationGroupByHeaderColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#BBD9EE" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="CrossTabulationEvenGroupByColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#EBF4FA" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+        </Style>
+        <Style x:Key="CrossTabulationOddGroupByColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#F9F6F4" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+        </Style>
+        <Style x:Key="CrossTabulationSummaryHeaderColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#C0C0C0" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="CrossTabulationEvenSummaryColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#E7E4D3" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="CrossTabulationOddSummaryColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+       
+        <Style x:Key="CrossTabulationGrandTotalSummaryColumRowStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#D5D50D" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="CrossTabulationGrandTotalHeaderColumnStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="#9DAF72" />
+            <Setter Property="BorderThickness" Value="0.50" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+       
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel Width="auto" Height="auto" HorizontalAlignment="Left" Margin="0,20">
+            <DockPanel  HorizontalAlignment="Left">
+                <DockPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+                    <Label Name="lblSummaryMainColumnName" FontSize="14" FontWeight="Bold" Content=""/>
+                </DockPanel>
+                <StackPanel Name="StackPanelCrossTabulationViewGroupByControls" Orientation="Horizontal" />
+                <StackPanel Name="StackPanelCrossTabulationViewSummaryControls" Orientation="Horizontal" />
+                </DockPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

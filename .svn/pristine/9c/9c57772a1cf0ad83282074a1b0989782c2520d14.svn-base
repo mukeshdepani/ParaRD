@@ -1,0 +1,60 @@
+﻿<Window x:Class="FastDB.ScriptGen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:myControl="clr-namespace:FastDB.Control" 
+        Title="ScriptGenerator" Height="761" Width="590" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Window.Resources>
+        <ResourceDictionary Source="./theme/generic.xaml">
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Width="570" Height="760">
+
+        <Border Margin="0,0,0,0" Padding="0" BorderThickness="0 0 0 0" CornerRadius="10" HorizontalAlignment="Left" VerticalAlignment="Top" Height="756">
+            <DockPanel HorizontalAlignment="Stretch" Margin="0,0,0,0" DockPanel.Dock="Top" Height="731" VerticalAlignment="Top" Width="661">
+                <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" Height="729" Width="652">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="White" Offset="0.0" />
+                            <GradientStop Color="#DDEEF4" Offset="0.5" />
+                            <GradientStop Color="#DDEEF4" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="423"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="186"/>
+                        <RowDefinition Height="12*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Enter Table Name" HorizontalAlignment="Left" Margin="0,10,0,0" FontFamily="Calibri" FontWeight="Normal" FontSize="14.667"></Label>
+                    <TextBox HorizontalAlignment="Left" Margin="120,7,0,9" Name="txtTableName" Width="231" />
+                    <TabControl Margin="0,0,129,298" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" Style="{StaticResource TabControlStyle}">
+                        <TabControl.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.0" />
+                                <GradientStop Color="#DDEEF4" Offset="0.5" />
+                                <GradientStop Color="#DDEEF4" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </TabControl.Background>
+                        <TabItem Name="TabItem1" Header="From File" Foreground="Black" FontFamily="Calibri" FontWeight="Normal" FontSize="14.667">
+                            <DockPanel Height="87">
+                                <Label Content="Import Text File"  HorizontalAlignment="Left" Margin="7,5,0,60" FontFamily="Calibri" FontWeight="Normal" FontSize="14.667" Grid.Row="1"></Label>
+                                <TextBox Name="txtFileName" Width="308" HorizontalAlignment="Left" Margin="10,5,0,55" Grid.Row="1" Height="25"></TextBox>
+                                <Button Name="btnBrowse" Content="Browse" Margin="5,3,5,50" Click="btnBrowse_Click" Width="81" HorizontalAlignment="Right" Height="27" Grid.Row="1" Style="{StaticResource buttonStyle}"></Button>
+                            </DockPanel>
+                        </TabItem>
+                        <TabItem Name="TabItem2" Header="Column Description" Foreground="Black" FontFamily="Calibri" FontWeight="Normal" FontSize="14.667">
+                            <DockPanel Height="79">
+                                <Label Content="Column Description" FontFamily="Calibri" FontSize="14.667" FontWeight="Normal" HorizontalAlignment="Left" Margin="5,10,0,50" Grid.Row="1" Height="29"/>
+                                <TextBox Name="txtHeader" Grid.Row="1" Margin="10,10,100,0" TextWrapping="Wrap" Height="60" VerticalAlignment="Top"></TextBox>
+                            </DockPanel>
+                        </TabItem>
+                    </TabControl>
+                    <myControl:ScriptGeneratorControl x:Name="ScriptGen1" DockPanel.Dock="Top"  Margin="0,129,6,40"  BorderBrush="Black" BorderThickness="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.Row="1" Grid.RowSpan="4"></myControl:ScriptGeneratorControl>
+
+                </Grid>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

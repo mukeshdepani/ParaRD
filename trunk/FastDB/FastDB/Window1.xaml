@@ -1,0 +1,41 @@
+﻿<Window x:Class="FastDB.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Derived Table Name" Height="110" Width="400"
+        ResizeMode="NoResize" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
+        <Border Margin="0,7,0,0" Padding="5" Background="AliceBlue"  BorderBrush="SteelBlue" BorderThickness="2,2,2,2" CornerRadius="10" VerticalAlignment="Top" Height="63" Width="360" HorizontalAlignment="Center">
+            <DockPanel HorizontalAlignment="Center" Margin="0,0,0,0" DockPanel.Dock="Top" Height="25" VerticalAlignment="Top">
+                <StackPanel Name="StackPanelTopControl1" DockPanel.Dock="Top" Height="94" Width="200" HorizontalAlignment="Center">
+                    <StackPanel Name="StackPanelTopControl" DockPanel.Dock="Top" HorizontalAlignment="Center">
+                        <DockPanel Name ="DockFromTabTopControl" Margin="0,0" HorizontalAlignment="Center">
+                            <TextBox HorizontalAlignment="Center" Name="txtFileName" Width="180" Margin="5,0,5,0" Height="25" BorderBrush="SteelBlue"/>
+                        </DockPanel>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <DockPanel Name="borderJoinDock" HorizontalAlignment="Center"  Margin="5,33,0,0" Height="30" VerticalAlignment="Top">
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Height="30" Width="92">
+                <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="5,0,0,0">
+                    <DockPanel Name="DockPanelFromTabRowHeader" HorizontalAlignment="Left" Margin="0,0,0,0" Height="28">
+                        <Button Name="btnSave"  Margin="0,5,0,0" HorizontalAlignment="Left" Height="20" Click="btnSave_Click">
+                            <DockPanel>
+                                <TextBlock Text=" Save " FontWeight="Bold"></TextBlock>
+                            </DockPanel>
+                        </Button>
+                        <Button Name="btnCancel"  Margin="5,5,0,0" HorizontalAlignment="Left" Height="20" Click="btnCancel_Click">
+                            <DockPanel>
+                                <TextBlock Text="Cancel" FontWeight="Bold"></TextBlock>
+                            </DockPanel>
+                        </Button>
+                    </DockPanel>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+
+
+
+
+    </Grid>
+</Window>

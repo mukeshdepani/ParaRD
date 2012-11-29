@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="FastDB.Control.MainGirdViewControl"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:tk="http://schemas.microsoft.com/wpf/2008/toolkit" 
+             xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="HeaderTemplateArrowUp" >
+            <DockPanel>
+                <TextBlock HorizontalAlignment="Center" Text="Up"/>
+
+                <TextBlock>Template Up</TextBlock>
+                <Path x:Name="arrow"
+           StrokeThickness = "1"            
+           Fill            = "Red"
+           Data            = "M0,0 L1,0 0.5,1 z" />
+            </DockPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="HeaderTemplateArrowDown">
+            <DockPanel>
+                <TextBlock HorizontalAlignment="Center" Text="Down"/>
+                <TextBlock>Template down</TextBlock>
+                <Path x:Name="arrow"
+              StrokeThickness = "1"            
+              Fill            = "Red"
+              Data            =  "M0,0 L1,0 0.5,1 z"/>
+            </DockPanel>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel Width="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <DockPanel Background="{DynamicResource ControlBackgroundBrush}">
+                    <StackPanel Name="DisplayTableNameStackPanel"  Orientation="Vertical" DockPanel.Dock="top" VerticalAlignment="Bottom" Height="51">
+                        <Label Name="lblTableName" Width="auto" FontSize="14" Margin="5,0" FontWeight="Bold" Height="20" VerticalAlignment="Bottom" Visibility="Hidden"></Label>
+                        <DockPanel VerticalAlignment="Bottom">
+                            <DockPanel DockPanel.Dock="Left" Margin="5,0" VerticalAlignment="Bottom">
+                                <Label Name="lblColumnNumber" FontFamily="Calibri" FontSize="13" FontWeight="Bold"  Width="auto" Margin="5,0" Height="15" HorizontalAlignment="Left"></Label>
+                                <Label Name="lblRowNumber" FontFamily="Calibri" FontSize="13" FontWeight="Bold" Width="auto" Margin="5,0" Height="15" HorizontalAlignment="Left"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="left" Margin="400,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+
+                                <Label Name="lblPageNumber" FontFamily="Calibri" FontSize="13" FontWeight="Bold" Width="auto" Height="15" HorizontalAlignment="Left"></Label>
+
+                                <Label Name="lblCurrenPageNumber" FontFamily="Calibri" FontSize="13" FontWeight="Bold" Width="auto" Height="15" HorizontalAlignment="Left">
+
+                                </Label>
+
+                            </DockPanel>
+
+                            <DockPanel Name="DocPnlGotoPage" DockPanel.Dock="Right" Margin="0,0,30,0" HorizontalAlignment="Left" Visibility="Hidden" VerticalAlignment="Bottom">
+
+                                <Label Name="lblPage" FontFamily="Calibri" FontSize="13" FontWeight="Bold" Width="auto" Height="15" HorizontalAlignment="Left" Content="Page" ></Label>
+
+                                <TextBox Name="txtGotoPage" FontFamily="Calibri" FontSize="13" FontWeight="Bold" Width ="50" Margin="5,0" MaxLength="6"  HorizontalAlignment="Left" />
+
+                                <Button Name="btnGotopage" FontFamily="Calibri" FontSize="13" FontWeight="Bold" Width="22" Margin="5,0" HorizontalAlignment="Left" Content="GO" Click="btnGotopage_Click" />
+
+                            </DockPanel>
+                        </DockPanel>
+                    </StackPanel>
+                    <!-- Vertical scroll bar-->
+                    <StackPanel Name="VBarMainStakPanel" Grid.Row="1" DockPanel.Dock="Right" Orientation="Horizontal" Height="100" Visibility="Hidden">
+                        <DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <Button Name="VBarBtnFirst" Height="20"  DockPanel.Dock="Top"  Command="{Binding FirstRowCommand}" Click="VBarBtnFirst_Click" ToolTip="First page rows">
+                                    <Path Fill="#3366FF"  Data="M 6,0 0,6  6,6 0,12 12,12 6,6 12,6 Z"/>
+                                </Button>
+                                <Button Name="VBarBtnPrevious" Height="20" DockPanel.Dock="Bottom"  Command="{Binding PreviousRowCommand}" Click="VBarPrevious_Click"  ToolTip="Previous page rows">
+                                    <Path Fill="#3366FF"  Data="M 0 6 L 12 6 L 6 0 Z"/>
+                                </Button>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Bottom">
+                                <Button Name="VBarBtnNext" Height="20"  DockPanel.Dock="Top"  Command="{Binding NextRowCommand}" Click="VBarBtnNext_Click" ToolTip="Next page rows">
+                                    <Path Fill="#3366FF" Data="M 0 0 L 6 6 L 12 0 Z"/>
+                                </Button>
+                                <Button Name="VBarBtnLast" Height="20"  DockPanel.Dock="Bottom"  Command="{Binding LastRowCommand}" Click="VBarBtnLast_Click" ToolTip="Last page rows">
+                                    <Path Fill="#3366FF" Data="M 6,12 12,6 6,6 12,0 0,0 6,6 0,6 Z"/>
+                                </Button>
+                            </DockPanel>
+                            <DockPanel>
+                                <Button Height="20"></Button>
+                            </DockPanel>
+                        </DockPanel>
+
+                    </StackPanel>
+                    <!-- Horizontal scroll bar-->
+                    <StackPanel Name="HBarMainStakPanel" VerticalAlignment="Stretch" Margin="0,0,0,0" DockPanel.Dock="Bottom" Grid.Row="1" Orientation="Vertical" Width="100" Height="20"  Visibility="Hidden">
+                        <DockPanel>
+                            <DockPanel>
+                                <Button Name="HBarBtnFirst"  DockPanel.Dock="Left"  Command="{Binding FirstColumnCommand}" Click="HBarBtnFirst_Click" ToolTip="First page columns">
+                                    <Path Fill="#3366FF" Data="M 0,6 6,0 6,6 12,0 12,12 6,6 6,12 Z"/>
+                                </Button>
+                                <Button Name="HBarBtnPrevious"  DockPanel.Dock="Right" Width="20"  Click="HBarBtnPrevious_Click" Command="{Binding PreviousColumnCommand}"  ToolTip="Previous page columns">
+                                    <Path Fill="#3366FF" Data="M 6,0 0,6 6,12 Z"/>
+                                </Button>
+
+                            </DockPanel>
+                            <DockPanel>
+                                <Button Width="20"></Button>
+                            </DockPanel>
+                            <DockPanel>
+                                <Button Name="HBarBtnNext"  DockPanel.Dock="Left" Width="20"  Click="HBarBtnNext_Click" Command="{Binding NextColumnCommand}" ToolTip="Next page columns">
+                                    <Path Fill="#3366FF" Data="M 0,0 6,6 0,12 Z"/>
+                                </Button>
+                                <Button Name="HBarBtnLast" DockPanel.Dock="Right"  Command="{Binding LastColumnCommand}" Click="HBarBtnLast_Click" ToolTip="Last page columns">
+                                    <Path Fill="#3366FF" Data="M 0,0 6,6 6,0 12,6 6,12 6,6 0,12 Z"/>
+                                </Button>
+
+                            </DockPanel>
+                        </DockPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" >
+                        <tk:DataGrid Name="MainDataGrid" FontFamily="Calibri" FontSize="13" FontWeight="Bold" ColumnWidth="auto" 
+                                     HorizontalAlignment="Stretch" ItemsSource="{Binding Results, NotifyOnTargetUpdated=True}" 
+                                     AutoGenerateColumns="True" IsReadOnly="True" Loaded="MainDataGrid_Loaded" 
+                                     TargetUpdated="MainDataGrid_TargetUpdated" Sorting="MainDataGrid_Sorting" 
+                                     AutoGeneratingColumn="MainDataGrid_AutoGeneratingColumn" HeadersVisibility="Column"
+                                     ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}">
+                        </tk:DataGrid>
+                    </StackPanel>
+                </DockPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>
